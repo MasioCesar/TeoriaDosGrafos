@@ -42,7 +42,7 @@ vector<vector<int>> kosaraju(int V, vector<vector<int>> &grafo)
         }
     }
 
-    vector<bool> visitado(V+1, false);
+    vector<bool> visitado(V + 1, false);
     stack<int> pilha;
 
     // Preenche a pilha pós-ordem dos vértices
@@ -64,7 +64,7 @@ vector<vector<int>> kosaraju(int V, vector<vector<int>> &grafo)
         pilha.pop();
         if (!visitado[cont])
         {
-            vector<int> component(V+1, -1);
+            vector<int> component(V + 1, -1);
             dfs_reverse(cont, grafo, visitado, component, components.size());
             components.push_back(component);
         }
@@ -75,8 +75,8 @@ vector<vector<int>> kosaraju(int V, vector<vector<int>> &grafo)
 
 int main(int argc, char *argv[])
 {
-    string input = "";
-    string output = "";
+    string in = "";
+    string out = "";
 
     int V, E;
 
@@ -93,25 +93,25 @@ int main(int argc, char *argv[])
         }
         else if (strcmp(argv[i], "-o") == 0 && i < argc - 1)
         {
-            output = argv[++i];
+            out = argv[++i];
         }
         else if (strcmp(argv[i], "-f") == 0 && i < argc - 1)
         {
-            input = argv[++i];
+            in = argv[++i];
         }
     }
 
-    if (input == "")
+    if (in == "")
     {
         cerr << "No input file specified. Use the -f parameter." << endl;
         return 1;
     }
 
-    ifstream fin(input);
+    ifstream fin(in);
 
     if (!fin)
     {
-        cerr << "Could not open input file: " << input << endl;
+        cerr << "Could not open input file: " << in << endl;
         return 1;
     }
 
@@ -131,12 +131,12 @@ int main(int argc, char *argv[])
 
     vector<vector<int>> components = kosaraju(V, grafo);
 
-    if (!(output == ""))
+    if (!(out == ""))
     {
-        ofstream fout(output);
+        ofstream fout(out);
         if (!fout)
         {
-            cerr << "Could not open output file: " << output << endl;
+            cerr << "Could not open output file: " << out << endl;
             return 1;
         }
 
@@ -165,6 +165,6 @@ int main(int argc, char *argv[])
         }
         cout << endl;
     }
-  
+
     return 0;
 }
