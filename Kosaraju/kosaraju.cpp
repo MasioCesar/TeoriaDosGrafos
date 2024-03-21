@@ -75,8 +75,8 @@ vector<vector<int>> kosaraju(int V, vector<vector<int>> &grafo)
 
 int main(int argc, char *argv[])
 {
-    string in = "";
-    string out = "";
+    string input = "";
+    string output = "";
 
     int V, E;
 
@@ -93,25 +93,25 @@ int main(int argc, char *argv[])
         }
         else if (strcmp(argv[i], "-o") == 0 && i < argc - 1)
         {
-            out = argv[++i];
+            output = argv[++i];
         }
         else if (strcmp(argv[i], "-f") == 0 && i < argc - 1)
         {
-            in = argv[++i];
+            input = argv[++i];
         }
     }
 
-    if (in == "")
+    if (input == "")
     {
         cerr << "No input file specified. Use the -f parameter." << endl;
         return 1;
     }
 
-    ifstream fin(in);
+    ifstream fin(input);
 
     if (!fin)
     {
-        cerr << "Could not open input file: " << in << endl;
+        cerr << "Could not open input file: " << input << endl;
         return 1;
     }
 
@@ -131,12 +131,12 @@ int main(int argc, char *argv[])
 
     vector<vector<int>> components = kosaraju(V, grafo);
 
-    if (!(out == ""))
+    if (!(output == ""))
     {
-        ofstream fout(out);
+        ofstream fout(output);
         if (!fout)
         {
-            cerr << "Could not open output file: " << out << endl;
+            cerr << "Could not open output file: " << output << endl;
             return 1;
         }
 
