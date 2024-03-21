@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
   {
     fin >> u >> v >> peso;
     grafo[u].push_back({v, peso});
-    grafo[v].push_back({u, peso}); // Para grafos não direcionados
+    grafo[v].push_back({u, peso});
   }
 
   fin.close();
