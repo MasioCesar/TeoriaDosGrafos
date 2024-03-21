@@ -9,6 +9,8 @@ Este projeto é uma implementação de diversos algoritmos fundamentais da Teori
 
 **Kruskal:** O algoritmo de Kruskal também encontra a árvore geradora mínima em um grafo ponderado, mas através de uma abordagem diferente da de Prim.
 
+**Kosaraju:** O algoritmo de Kosaraju é utilizado para encontrar componentes fortemente conexos em um grafo direcionado.
+
 **Floyd-Warshall:** Este algoritmo encontra todos os caminhos mais curtos entre todos os pares de vértices em um grafo ponderado.
 
 ## Aluno
