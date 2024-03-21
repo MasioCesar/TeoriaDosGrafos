@@ -101,10 +101,10 @@ int main(int argc, char *argv[])
 
   fin.close();
 
-  if (!(output == ""))
+  if (not(output == ""))
   {
     ofstream fout(output);
-    if (!fout)
+    if (not fout)
     {
       cerr << "Could not open output file: " << output << endl;
       return 1;
@@ -115,18 +115,32 @@ int main(int argc, char *argv[])
       {
         for (int j = 1; j <= V; j++)
         {
-          fout << j << ":" << distancia[i][j] << " ";
+          if (distancia[i][j] == INF)
+          {
+            fout << i << ":" << -1 << " ";
+          }
+          else
+          {
+            fout << j << ":" << distancia[i][j] << " ";
+          }
         }
-        fout << endl;
+        cout << endl;
       }
     }
     else
     {
-      for (int i = 1; i <= V; i++)
+      for (int i = 1; i <= V; ++i)
       {
-        fout << i << ":" << distancia[vertice_inicial][i] << " ";
+        if (distancia[vertice_inicial][i] != INF)
+        {
+          fout << i << ":" << distancia[vertice_inicial][i] << " ";
+        }
+        else
+        {
+          fout << i << ":" << -1 << " ";
+        }
       }
-      fout << endl;
+      cout << endl;
     }
     fout << endl;
     fout.close();
@@ -138,16 +152,30 @@ int main(int argc, char *argv[])
     {
       for (int j = 1; j <= V; j++)
       {
-        cout << j << ":" << distancia[i][j] << " ";
+        if (distancia[i][j] == INF)
+        {
+          cout << i << ":" << -1 << " ";
+        }
+        else
+        {
+          cout << j << ":" << distancia[i][j] << " ";
+        }
       }
       cout << endl;
     }
   }
   else
   {
-    for (int i = 1; i <= V; i++)
+    for (int i = 1; i <= V; ++i)
     {
-      cout << i << ":" << distancia[vertice_inicial][i] << " ";
+      if (distancia[vertice_inicial][i] != INF)
+      {
+        cout << i << ":" << distancia[vertice_inicial][i] << " ";
+      }
+      else
+      {
+        cout << i << ":" << -1 << " ";
+      }
     }
     cout << endl;
   }
