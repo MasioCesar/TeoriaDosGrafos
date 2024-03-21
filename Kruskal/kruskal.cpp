@@ -143,6 +143,27 @@ int main(int argc, char *argv[])
 
     int tamanho = resultado.size();
 
+    if (!(output == ""))
+    {
+        ofstream fout(output);
+        if (!fout)
+        {
+            cerr << "Could not open output file: " << output << endl;
+            return 1;
+        }
+        if (mostra_resultado)
+        {
+            for (int i = 0; i < tamanho; i++)
+            {
+                fout << "(" << resultado[i].first << "," << resultado[i].second << ")" << endl;
+            }
+        }
+        else
+        {
+            fout << menor_caminho << endl;
+        }
+    }
+
     if (mostra_resultado)
     {
         for (int i = 0; i < tamanho; i++)
