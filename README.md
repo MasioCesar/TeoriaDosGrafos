@@ -13,6 +13,9 @@ Este projeto é uma implementação de diversos algoritmos fundamentais da Teori
 
 **Floyd-Warshall:** Este algoritmo encontra todos os caminhos mínimos entre todos os pares de vértices em um grafo ponderado.
 
+## Compilar o código
+Para compilar o código, basta executar o comando make no diretório do algoritmo. Isso criará o arquivo executável .bin.
+
 ## Sobre o Floyd-Warshall
 As entradas testadas estão no diretório **Floyd–Warshall/casosTestes/**;
 
