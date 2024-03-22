@@ -18,7 +18,7 @@ A saída será a distância mínima de 1 para todos os outros vértices. Por exe
 ```
 
 ## Para testar todos os casosTestes e outputTestes com o Bat2.sh
-Dê o comando:
+Na pasta /Floyd-Warshall, dê o comando:
 ```bash
 ./Bat2.sh
 ```
