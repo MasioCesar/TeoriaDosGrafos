@@ -1,7 +1,7 @@
 ## Sobre o Floyd-Warshall
 As entradas testadas estão no diretório **Floyd–Warshall/casosTestes/**;
 
-**Os casosTestes do código são feitos considerando que o usuário não informou nenhum vértice.**
+**O output dos casosTestes são feitos considerando que o usuário não informou nenhum vértice.**
 
 ## Formato de Entrada e saída
 A saída será apresentada no formato "vértice:valor", indicando o valor da distância mínima até aquele vértice partindo do vértice inicial especificado pelo comando -i.
